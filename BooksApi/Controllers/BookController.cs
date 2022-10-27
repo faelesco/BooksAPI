@@ -52,9 +52,9 @@ namespace BooksApi.Controllers
         {
             if(id == book.Id)
             {
+                await _bookRepository.Update(book);
                 return BadRequest();
             }
-            await _bookRepository.Update(book);
             return NoContent();
         }
     }
